@@ -15,7 +15,10 @@ function parseDate(dateString: string): Date {
 export default function Home() {
   const now = new Date();
 
-  const storedNotes = localStorage.getItem('dontforget.notes') ?? '';
+  let storedNotes = '';
+  if (typeof window !== 'undefined') {
+    storedNotes = localStorage.getItem('dontforget.notes') ?? '';
+  }
 
   const [notes, setNotes] = useState(storedNotes);
   const [todos, setTodos] = useState<Todo[]>([]);
