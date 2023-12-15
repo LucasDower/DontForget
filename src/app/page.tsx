@@ -1,7 +1,5 @@
 "use client";
 
-import dateFormat, { masks } from "dateformat";
-import humanizeDuration from "humanize-duration";
 import { useEffect, useState } from "react"
 
 type Todo = { desc: string, date: Date, done: boolean, doom: boolean };
